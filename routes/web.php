@@ -25,9 +25,15 @@ Route::resource('/', PostController::class) ->names([
     'index' => 'posts.index',
     'create' =>'posts.create',
     'store' => 'posts.store',
-    'show' => 'posts.show',
+    'show' => 'posts.show'
 ]);
 
-Route::any('/remove/{id}', [PostController::class, 'destroy']);
+Route::delete('/remove/{id}', [PostController::class, 'destroy']);
+
+// Route::get('/posts/edit/{post}', [PostController::class, 'edit'])->name('posts.edit');
+
+Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
+
+Route::post('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
 
 

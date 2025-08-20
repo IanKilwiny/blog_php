@@ -5,6 +5,7 @@
         <a class="btn btn-secondary float-end mt-3" href="{{ route('posts.create') }}"
             role="button">Add Post</a>
         <h1>Mini post list</h1>
+
     </div>
     <hr>
     <!-- Message if a post is posted successfully -->
@@ -37,6 +38,9 @@ asset('images/'.$post->image)}}" alt="">
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
         </form>
+
+        <a href="{{route('posts.edit', $post->id)}}">Editar</a>
+          
         </div>
     </div>
     @endforeach
